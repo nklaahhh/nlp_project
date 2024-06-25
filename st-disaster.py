@@ -3,6 +3,7 @@ import spacy
 import requests
 from bs4 import BeautifulSoup
 from transformers import pipeline
+import en_core_web_sm
 
 # Load the transformer model pipeline for text classification
 classifier = pipeline("text-classification", model="distilbert-base-uncased-finetuned-sst-2-english")

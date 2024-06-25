@@ -1,4 +1,10 @@
+streamlit
 spacy
 requests
 bs4
 transformers
+nltk
+torch
+sklearn
+pandas
+joblib

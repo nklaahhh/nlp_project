@@ -11,8 +11,8 @@ classifier = pipeline("text-classification", model="distilbert-base-uncased-fine
 st.title("Binary Classification Demo")
 
 # Load SpaCy model
-nlp = spacy.load("en_core_web_sm")
-
+# nlp = spacy.load("en_core_web_sm")
+nlp = en_core_web_sm.load()
 # Text areas for input
 url_input = st.text_area("Enter URL")
 paragraph_input = st.text_area("Enter a paragraph")

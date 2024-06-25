@@ -4,3 +4,4 @@ bs4
 BeautifulSoup
 transformers
 streamlit
+beautifulsoup4

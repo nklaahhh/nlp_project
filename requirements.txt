@@ -1,0 +1,5 @@
+spacy
+request
+bs4
+transformers
+streamlit

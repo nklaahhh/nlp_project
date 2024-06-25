@@ -1,5 +1,6 @@
 spacy
-request
+requests
 bs4
+BeautifulSoup
 transformers
 streamlit

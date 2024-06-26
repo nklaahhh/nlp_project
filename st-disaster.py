@@ -9,7 +9,7 @@ import en_core_web_sm
 classifier = pipeline("text-classification", model="distilbert-base-uncased-finetuned-sst-2-english")
 
 # Streamlit app title
-st.title("Binary Classification Demo")
+st.title("DISASTER TWEET CLASSIFICATION")
 
 # Load SpaCy model
 # nlp = spacy.load("en_core_web_sm")

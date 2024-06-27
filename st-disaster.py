@@ -12,8 +12,8 @@ classifier = pipeline("text-classification", model="distilbert-base-uncased-fine
 st.title("DISASTER TWEET CLASSIFICATION")
 
 # Load SpaCy model
-# nlp = spacy.load("en_core_web_sm")
 nlp = en_core_web_sm.load()
+
 # Text areas for input
 url_input = st.text_area("Enter URL")
 paragraph_input = st.text_area("Enter a paragraph")
@@ -31,11 +31,11 @@ if st.button("Analyze"):
             result = classifier(text)
             label = result[0]['label']
             score = result[0]['score']
-            classification = "Disaster" if label == "LABEL_1" else "Non-disaster"
+            classification = "Disaster" if label == "POSITIVE" else "Non-disaster"
             st.success(f"Entities: {entities}")
             st.success(f"Classification: {classification} with score {score:.2f}")
-        except:
-            st.error("Error opening URL. Please make sure it's valid.")
+        except Exception as e:
+            st.error(f"Error opening URL: {e}")
     elif paragraph_input:
         doc = nlp(paragraph_input)
         entities = [(X.text, X.label_) for X in doc.ents]
@@ -43,7 +43,7 @@ if st.button("Analyze"):
         result = classifier(paragraph_input)
         label = result[0]['label']
         score = result[0]['score']
-        classification = "Disaster" if label == "LABEL_1" else "Non-disaster"
+        classification = "Disaster" if label == "POSITIVE" else "Non-disaster"
         st.success(f"Entities: {entities}")
         st.success(f"Classification: {classification} with score {score:.2f}")
     else:
